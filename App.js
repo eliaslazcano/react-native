@@ -7,6 +7,7 @@
  //Importações
 import React from 'react';
 import {View, Text, Image, Platform, StyleSheet, Dimensions, FlatList} from 'react-native';
+import Cabecalho from './src/components/cabecalho';
 
 //Valores
 const nome = 'Elias Neto';
@@ -35,7 +36,7 @@ const App = () => {
       {/* Renderização em laço: [JSX] */}
       <FlatList
         data={informacoes}
-        renderItem={ ({item, index}) => <Text>{index + ': ' + item.usuario}</Text> }
+        renderItem={ ({item, index}) => <Cabecalho usuario={item.usuario}/> }
         keyExtractor={(item, index) => index.toString()}
       />
     </View>
