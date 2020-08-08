@@ -6,15 +6,15 @@
 
  //Importações
 import React from 'react';
-import {View, Text, Image, Platform, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, Image, Platform, StyleSheet, Dimensions, FlatList} from 'react-native';
 
 //Valores
 const nome = 'Elias Neto';
 const plataforma = Platform.select({
   android: 'Estou usando Android',
-  ios: 'Estou usando iOS'
+  ios: 'Estou usando iOS',
 });
-const larguraDaTela = Dimensions.get("screen").width;
+const larguraDaTela = Dimensions.get('screen').width;
 const informacoes = [
   {usuario: 'Elias Neto'},
   {usuario: 'Karoliny Paulul'},
@@ -22,7 +22,7 @@ const informacoes = [
 ];
 
 //Componentes
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <View style={styles.container}>
       <Image source={require('./res/img/alura.jpg')} style={styles.imagemStyle} />
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   imagemStyle: {
     height: larguraDaTela, //Altura em pixels
     width: larguraDaTela,  //Largura em pixels
-  }
+  },
 });
 
 export default App;
