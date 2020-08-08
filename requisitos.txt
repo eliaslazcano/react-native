@@ -1,4 +1,0 @@
-instale NodeJS no site, incluindo o Chocolatey que vem opcionalmente incluso.
-choco install -y python2 jdk8
-instalar Android Studio e configurar um Emulador + Sdk
-npm install -g react-native-cli

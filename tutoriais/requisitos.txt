@@ -1,0 +1,14 @@
+//Requisitos
+instale NodeJS no site, incluindo o Chocolatey que vem opcionalmente incluso.
+choco install -y python2 jdk8
+instalar Android Studio e configurar um Emulador + Sdk
+npm install -g react-native-cli
+
+//Iniciar projeto
+react-native run-android
+react-native run-ios
+react-native start
+
+//Introdução
+A renderização do projeto é iniciada no App.js, sendo ele o componente Root.
+Aperte R duas vezes para atualizar o App no emulador.
