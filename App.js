@@ -6,7 +6,7 @@
 
  //Importações
 import React from 'react';
-import {View, Text, Image, Platform, StyleSheet} from 'react-native';
+import {View, Text, Image, Platform, StyleSheet, Dimensions} from 'react-native';
 
 //Valores
 const nome = 'Elias Neto';
@@ -14,17 +14,16 @@ const plataforma = Platform.select({
   android: 'Estou usando Android',
   ios: 'Estou usando iOS'
 });
-import imagem from './res/img/s2-checked.png';
+const larguraDaTela = Dimensions.get("screen").width;
 
 //Componentes
 const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
-      <Image source={require('./res/img/s2.png')} />
+      <Image source={require('./res/img/alura.jpg')} style={styles.imagemStyle} />
       <Text style={styles.titulo}>Aprendendo React Native</Text>
       <Text style={styles.subtitulo}>{nome}</Text>
       <Text style={styles.subtitulo}>{plataforma}</Text>
-      <Image source={imagem} />
     </View>
   );
 };
@@ -35,13 +34,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F5FCFF',
   },
   titulo: {
-    fontSize: 20
+    fontSize: 20,
   },
   subtitulo: {
-    color: '#666666'
+    color: '#666666',
+  },
+  imagemStyle: {
+    height: larguraDaTela, //Altura em pixels
+    width: larguraDaTela,  //Largura em pixels
   }
 });
 
