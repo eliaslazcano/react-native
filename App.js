@@ -6,7 +6,7 @@
 
  //Importações
 import React from 'react';
-import {View, Text, Platform, StyleSheet} from 'react-native';
+import {View, Text, Image, Platform, StyleSheet} from 'react-native';
 
 //Valores
 const nome = 'Elias Neto';
@@ -14,14 +14,17 @@ const plataforma = Platform.select({
   android: 'Estou usando Android',
   ios: 'Estou usando iOS'
 });
+import imagem from './res/img/s2-checked.png';
 
 //Componentes
 const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
+      <Image source={require('./res/img/s2.png')} />
       <Text style={styles.titulo}>Aprendendo React Native</Text>
       <Text style={styles.subtitulo}>{nome}</Text>
       <Text style={styles.subtitulo}>{plataforma}</Text>
+      <Image source={imagem} />
     </View>
   );
 };
