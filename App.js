@@ -15,6 +15,11 @@ const plataforma = Platform.select({
   ios: 'Estou usando iOS'
 });
 const larguraDaTela = Dimensions.get("screen").width;
+const informacoes = [
+  {usuario: 'Elias Neto'},
+  {usuario: 'Karoliny Paulul'},
+  {usuario: 'Lorem Ipsum'},
+];
 
 //Componentes
 const App: () => React$Node = () => {
@@ -24,6 +29,15 @@ const App: () => React$Node = () => {
       <Text style={styles.titulo}>Aprendendo React Native</Text>
       <Text style={styles.subtitulo}>{nome}</Text>
       <Text style={styles.subtitulo}>{plataforma}</Text>
+      <Text>Outros nomes:</Text>
+      {/* Renderização em laço: [JavaScript] */}
+      {informacoes.map( (item, index) => <Text key={index.toString()}>{item.usuario}</Text> )}
+      {/* Renderização em laço: [JSX] */}
+      <FlatList
+        data={informacoes}
+        renderItem={ ({item, index}) => <Text>{index + ': ' + item.usuario}</Text> }
+        keyExtractor={(item, index) => index.toString()}
+      />
     </View>
   );
 };
