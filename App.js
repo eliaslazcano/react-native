@@ -6,61 +6,29 @@
 
  //Importações
 import React from 'react';
-import {View, Text, Image, Platform, StyleSheet, Dimensions, FlatList} from 'react-native';
-import Cabecalho from './src/components/cabecalho';
+import { Dimensions, FlatList, View } from 'react-native';
+import { Usuario } from './src/components/usuario';
 
 //Valores
-const nome = 'Elias Neto';
-const plataforma = Platform.select({
-  android: 'Estou usando Android',
-  ios: 'Estou usando iOS',
-});
 const larguraDaTela = Dimensions.get('screen').width;
-const informacoes = [
+const usuarios = [
   {usuario: 'Elias Neto'},
-  {usuario: 'Karoliny Paulul'},
-  {usuario: 'Lorem Ipsum'},
+  {usuario: 'Karoliny Pauluk'},
+  {usuario: 'Laura Pauluk'},
+  {usuario: 'Erilda Viana'},
 ];
 
 //Componentes
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Image source={require('./res/img/alura.jpg')} style={styles.imagemStyle} />
-      <Text style={styles.titulo}>Aprendendo React Native</Text>
-      <Text style={styles.subtitulo}>{nome}</Text>
-      <Text style={styles.subtitulo}>{plataforma}</Text>
-      <Text>Outros nomes:</Text>
-      {/* Renderização em laço: [JavaScript] */}
-      {informacoes.map( (item, index) => <Text key={index.toString()}>{item.usuario}</Text> )}
-      {/* Renderização em laço: [JSX] */}
+    <View>
       <FlatList
-        data={informacoes}
-        renderItem={ ({item, index}) => <Cabecalho usuario={item.usuario}/> }
+        data={usuarios}
         keyExtractor={(item, index) => index.toString()}
+        renderItem={ ({item, index}) => <Usuario nome={item.usuario}/> }
       />
     </View>
   );
 };
-
-//Ajustes de layout (folha de estilo)
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  titulo: {
-    fontSize: 20,
-  },
-  subtitulo: {
-    color: '#666666',
-  },
-  imagemStyle: {
-    height: larguraDaTela, //Altura em pixels
-    width: larguraDaTela,  //Largura em pixels
-  },
-});
 
 export default App;
