@@ -6,7 +6,7 @@ const Cabecalho = (props) => {
   return (
     <View style={style.cabecalho}>
       <Image
-        source={require('./../../../../res/img/alura.jpg')}
+        source={ {uri: props.urlFoto} }
         style={style.avatar}
       />
       <Text>{props.nome}</Text>

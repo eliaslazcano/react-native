@@ -5,8 +5,8 @@ import { ImagemPost } from './imagemPost';
 const Usuario = (props) => {
   return (
     <Fragment>
-      <Cabecalho nome={props.nome}/>
-      <ImagemPost/>
+      <Cabecalho nome={props.nome} urlFoto={props.avatar}/>
+      <ImagemPost urlFoto={props.urlFoto} descricao={props.descricao}/>
     </Fragment>
   );
 };
