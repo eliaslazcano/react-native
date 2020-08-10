@@ -1,16 +1,12 @@
 import React, { Fragment } from 'react';
-import { Image } from 'react-native';
 import { Cabecalho } from './cabecalho';
-import style from './style';
+import { ImagemPost } from './imagemPost';
 
 const Usuario = (props) => {
   return (
     <Fragment>
       <Cabecalho nome={props.nome}/>
-      <Image
-        source={require('./../../../res/img/alura.jpg')}
-        style={style.imagemStyle}
-      />
+      <ImagemPost/>
     </Fragment>
   );
 };
