@@ -32,6 +32,7 @@ const App = () => {
             avatar={'https://i.pravatar.cc/300'}
             urlFoto={'https://picsum.photos/300'}
             descricao={item.description}
+            qtdLikes={item.likes}
           /> 
         }
       />

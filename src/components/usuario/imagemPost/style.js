@@ -8,6 +8,10 @@ const style = StyleSheet.create({
   descricao: {
     margin: 5,
   },
+  likeView: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   likeBtn: {
     height: 32,
     width: 32,

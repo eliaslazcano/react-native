@@ -6,7 +6,7 @@ const Usuario = (props) => {
   return (
     <Fragment>
       <Cabecalho nome={props.nome} urlFoto={props.avatar}/>
-      <ImagemPost urlFoto={props.urlFoto} descricao={props.descricao}/>
+      <ImagemPost urlFoto={props.urlFoto} descricao={props.descricao} qtdLikes={props.qtdLikes}/>
     </Fragment>
   );
 };
