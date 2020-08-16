@@ -1,1 +1,0 @@
-export {default as ImagemPost} from './ImagemPost';
