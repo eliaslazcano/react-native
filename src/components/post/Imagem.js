@@ -13,11 +13,11 @@ const Imagem = ({uriFoto, descricao, qtdLikes}) => {
 
   return (
     <Fragment>
-      <Image source={{uri: uriFoto}} style={style.foto}/>
-      <Text style={style.descricao}>{descricao}</Text>
-      <View style={style.likeView}>
+      <Image source={{uri: uriFoto}} style={styles.foto}/>
+      <Text style={styles.descricao}>{descricao}</Text>
+      <View style={styles.likeView}>
         <TouchableOpacity onPress={onLike}>
-          <Image source={getLikeButtonImage(curtiu)} style={style.likeButton}/>
+          <Image source={getLikeButtonImage(curtiu)} style={styles.likeButton}/>
         </TouchableOpacity>
         <Text>{likes}</Text>
       </View>
@@ -25,7 +25,7 @@ const Imagem = ({uriFoto, descricao, qtdLikes}) => {
   );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   foto: {
     width: Dimensions.get('screen').width,
     height: Dimensions.get('screen').width,

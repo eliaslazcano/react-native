@@ -4,30 +4,29 @@
  * @flow strict-local
  */
 
- //Importações
+//Importações
 import React, { useState, useEffect } from 'react';
 import { FlatList, View } from 'react-native';
-import { Usuario } from './src/components/usuario';
-import { Post } from './src/components/post';
-import loadFotos from './src/api/feed';
+import Post from './src/components/post';
+import loadPosts from './src/api/feed';
 
 //Componentes
 const App = () => {
   //Variaveis reativas
-  const [fotos, setFotos] = useState([]); //[var, setter()] = useState(valorInicial[]);
+  const [posts, setPosts] = useState([]); //[var, setter()] = useState(valorInicial[]);
   
   //Evento executado quando o componente é construído.
   useEffect(() => {
-    loadFotos(setFotos);
+    loadPosts(setPosts);
   }, []);
 
   //Template visual
   return (
     <View>
       <FlatList
-        data={fotos}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={ ({item, index}) => {
+        data={posts}
+        keyExtractor={item => item.id.toString()}
+        renderItem={ ({item}) => {
           return (
             <Post
               nome={item.userName}
